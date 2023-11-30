@@ -1,0 +1,31 @@
+.backg-red {
+  color: black;
+  border: 2px solid red;
+  padding: 1em;
+}
+
+dialog {
+  border-color: red;
+}
+
+#dialog-container p {
+  font-weight: 600;
+}
+
+#nuova-riga {
+  margin: 1em 0 1em 1em;
+}
+
+#tabella-container {
+  margin: 0 1em 1em 1em;
+}
+
+h1,
+h2 {
+  margin: 1em 0 0 1em;
+  text-align: center;
+}
+
+#form-modifica-persona {
+  margin: 1em;
+}
