@@ -21,3 +21,40 @@ My Linkedin -> [Alessio's Linkedin](https://www.linkedin.com/in/alessioolimpio/)
 ## notes
 
 Unfortunately some variables names are in italian, given that it started just for learning purposes. I will take care of translating them into English. 
+
+### TO DO List, fixes and work in progress
+
+    - prepare html table ✅
+    - create config.php file ✅
+    - create select.php file ✅
+    - create container ✅
+    - do fetch for data ✅
+    - create table dynamically ✅
+    - add new row key, edit and delete row ✅
+    - create file insert, update, delete ✅
+    - create fetch insert, update, delete ✅
+    - update table ✅
+
+    TO DO.
+    - form to insert a person ✅
+        - select form with queryselector ✅
+        - e.preventDefault() ✅
+        - new instance formData, into which we pass the form selected in step 1) ✅
+        - fetch ✅
+    - implement form reset ✅
+    - hide the form until the insert person button is clicked ✅
+    - If I double-click on editperson it inserts the data of the person to be edited again without deleting the previous table ✅
+    - export all the JS code to another file ✅
+    - update the sql statement because it is only setting the email ✅
+    - make the edit table appear only after clicking one of the edit buttons ✅
+    - timer for the dialog ✅
+    - give it some minimal styling with tailwind.css (better) or bootstrap ✅
+        
+    Possibilities for improvement
+      - add new fields on the both the form and database
+      - implement a minimum of form field validation
+      - create a repo on github ✅
+      - implement full textsearch 
+            - https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html
+            - https://packagist.org/packages/teamtnt/tntsearch
+        
