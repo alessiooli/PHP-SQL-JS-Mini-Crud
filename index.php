@@ -5,41 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crud con Ajax</title>
-    <!-- Crud con Ajax
-        - preparare tabella html ✅
-        - creare file config.php ✅
-        - creare file select.php ✅
-        - creare container ✅
-        - fare il fetch per dati ✅
-        - creare dinamicamente la tabella ✅
-        - aggiungere tasto nuova riga, modifica e elimina riga ✅
-        - creare file insert, update, delete ✅
-        - creare fetch insert, update, delete ✅
-        - aggiornare tabella ✅
-
-        DA FARE DA SOLO
-        - form per inserire una persona ✅
-            - selezionare il form con queryselector ✅
-            - e.preventDefault() ✅
-            - nuova istanza formData, in cui passiamo il form selezionato al punto 1) ✅
-            - fetch ✅
-        - implementare form reset ✅
-        - nascondere il form finché non si clicca sul pulsante inserisci persona ✅
-        - Se due volte su modificapersona mi inserisce di nuovo i dati della persona da modificare senza eliminare la precedente tabella ✅
-        - esportare tutto il codice JS in un altro file ✅
-        - $sql = "UPDATE persone SET email='$email' WHERE id = $id"; aggiornare lo statement sequel perché sta settando solo la email ✅
-        - fare in modo che la tabella modifica compaia solo dopo aver cliccato su uno dei pulsanti modifica ✅
-        - timer per il dialog ✅
-        - dargli un minimo di stile con tailwind.css (meglio) o bootstrap ✅
-        
-        Possibilità di miglioramento
-        - implementare un minimo di validazione dei campi del form
-        - fare una repo su github
-        - implementare full textsearch 
-            - https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html
-            - https://packagist.org/packages/teamtnt/tntsearch
-
-    -->
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
