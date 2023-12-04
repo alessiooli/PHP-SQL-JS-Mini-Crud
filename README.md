@@ -17,3 +17,7 @@ My name's Alessio Olimpio, I'm an italian Web Developer and SEO, based in Latina
 My website -> [AlessioOlimpio.com](https://www.alessioolimpio.com/)
 
 My Linkedin -> [Alessio's Linkedin](https://www.linkedin.com/in/alessioolimpio/) 
+
+## notes
+
+Unfortunately some variables names are in italian, given that it started just for learning purposes. I will take care of translating them into English. 
