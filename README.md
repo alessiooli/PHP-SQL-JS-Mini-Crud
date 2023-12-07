@@ -1,26 +1,29 @@
 # PHP-SQL-JS-Mini-Crud
+
 The smallest interactive crud in the world, made in PHP, SQL, JS.
 
-## Why? 
+## Why?
+
 This is a project I'm working on, a small crud to serve as a database. Wasn't planned to go public, but I thought it could help somebody who's learning web development. If you need help, reach me out on my website.
 
 ## Tech Stack
+
 - PHP
 - SQL
 - Javascript
 - Pure CSS
 
-## Who am I? 
+## Who am I?
 
-My name's Alessio Olimpio, I'm an italian Web Developer and SEO, based in Latina. 
+My name's Alessio Olimpio, I'm an italian Web Developer and SEO, based in Latina.
 
 My website -> [AlessioOlimpio.com](https://www.alessioolimpio.com/)
 
-My Linkedin -> [Alessio's Linkedin](https://www.linkedin.com/in/alessioolimpio/) 
+My Linkedin -> [Alessio's Linkedin](https://www.linkedin.com/in/alessioolimpio/)
 
 ## notes
 
-Unfortunately some variables names are in italian, given that it started just for learning purposes. I will take care of translating them into English. 
+Unfortunately some variables names are in italian, given that it started just for learning purposes. I will take care of translating them into English.
 
 ### TO DO List, fixes and work in progress
 
@@ -35,7 +38,7 @@ Unfortunately some variables names are in italian, given that it started just fo
     - create fetch insert, update, delete ✅
     - update table ✅
 
-    TO DO.
+    TO DO
     - form to insert a person ✅
         - select form with queryselector ✅
         - e.preventDefault() ✅
@@ -49,12 +52,23 @@ Unfortunately some variables names are in italian, given that it started just fo
     - make the edit table appear only after clicking one of the edit buttons ✅
     - timer for the dialog ✅
     - give it some minimal styling with tailwind.css (better) or bootstrap ✅
-        
+
     Possibilities for improvement
-      - add new fields on the both the form and database
-      - implement a minimum of form field validation
-      - create a repo on github ✅
-      - implement full textsearch 
-            - https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html
-            - https://packagist.org/packages/teamtnt/tntsearch
-        
+    - make a repo on github ✅
+    - add new fields needed on both the form and database
+    - implement a minimum of form field validation
+    - implement full textsearch, could make sense?
+        - https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html
+        - https://packagist.org/packages/teamtnt/tntsearch
+
+## Appunti
+
+- capire come implementare la ricerca sui campi principali, che potrebbero essere:
+  - codice
+  - nazionalità: italiana o non
+  - città
+  - zona
+  - asl
+  - municipi/distretti
+
+Ha senso almeno all'inizio partire con una ricerca con un menù dropdown in cui selezionare direttamente il campo da cercare, che poi invierò come variabile al database.

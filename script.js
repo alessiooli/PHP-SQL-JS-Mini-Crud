@@ -42,7 +42,20 @@ window.addEventListener("DOMContentLoaded", (e) => {
     }
   }
 
+  /**
+   * Script carica gli altri risultati visibili
+   */
+  let risultatiVisibili = 0;
+
+  // Generiamo la tabella per la prima volta
   generaTabella();
+
+  document
+    .getElementById("carica-altri")
+    .addEventListener("click", function () {
+      risultatiVisibili += 200;
+      aggiornaTabella();
+    });
 
   function generaTabella() {
     fetch("./php/select.php", {
@@ -51,45 +64,71 @@ window.addEventListener("DOMContentLoaded", (e) => {
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({ count: risultatiVisibili }),
     })
       .then((response) => response.json()) // parsiamo il testo della promise, da json a oggetto javascript
       .then((data) => {
-        persone = data;
-        console.log("Dati ricevuti: ", data);
-        let tabella = `
-                <table id="tabella-record" class="pure-table pure-table-bordered">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${generaRighe(data)}
-                    </tbody>
-                </table>
-                `;
-        tabellaContainer.insertAdjacentHTML("beforeend", tabella);
-        let modificaBottoni = document.querySelectorAll(".modifica-persona");
-        let eliminaBottoni = document.querySelectorAll(".elimina-persona");
+        if (data.message === "Non ci sono più risultati da mostrare.") {
+          document.getElementById("carica-altri").disabled = true;
+          console.log(data.message);
+        } else {
+          if (data.error) {
+            console.error(data.error);
+          } else {
+            persone = data;
+            console.log("Dati ricevuti: ", data);
+            let tabella = `
+                  <table id="tabella-record" class="pure-table pure-table-striped pure-table-bordered">
+                      <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Codice</th>
+                              <th>Data Consegna</th>
+                              <th>Qualifica</th>
+                              <th>Nazionalità</th>
+                              <th>Cognome</th>
+                              <th>Nome</th>
+                              <th>Sesso</th>
+                              <th>Telefono</th>
+                              <th>Città</th>
+                              <th>Provincia</th>
+                              <th>Cap</th>
+                              <th>Coordinate</th>
+                              <th>Zona</th>
+                              <th>Asl</th>
+                              <th>Municipi/Distretti</th>
+                              <th>Email</th>
+                              <th>Patente</th>
+                              <th>Data Colloquio/Contatto</th>
+                              <th>Offerta Assistenza</th>
+                              <th>Tipo Collaborazione</th>
+                              <th>Commenti</th>
+                              <th></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          ${generaRighe(data)}
+                      </tbody>
+                  </table>
+                  `;
+            tabellaContainer.insertAdjacentHTML("beforeend", tabella);
+            let modificaBottoni =
+              document.querySelectorAll(".modifica-persona");
+            let eliminaBottoni = document.querySelectorAll(".elimina-persona");
 
-        for (let i = 0; i < modificaBottoni.length; i++) {
-          modificaBottoni[i].addEventListener("click", modificaPersona);
+            for (let i = 0; i < modificaBottoni.length; i++) {
+              modificaBottoni[i].addEventListener("click", modificaPersona);
 
-          modificaBottoni.forEach((button) => {
-            button.addEventListener("click", toggleTabellaModifica);
-          });
+              modificaBottoni.forEach((button) => {
+                button.addEventListener("click", toggleTabellaModifica);
+              });
+            }
+
+            for (let i = 0; i < eliminaBottoni.length; i++) {
+              eliminaBottoni[i].addEventListener("click", eliminaPersona);
+            }
+          }
         }
-
-        for (let i = 0; i < eliminaBottoni.length; i++) {
-          eliminaBottoni[i].addEventListener("click", eliminaPersona);
-        }
-      })
-      .catch((error) => {
-        console.error("Errore: ", error);
       });
   }
 
@@ -99,9 +138,27 @@ window.addEventListener("DOMContentLoaded", (e) => {
       let riga = `
                 <tr>
                     <td>${persona.id}</td>
-                    <td>${persona.nome}</td>
+                    <td>${persona.codice}</td>
+                    <td>${persona.data_consegna}</td>
+                    <td>${persona.qualifica}</td>
+                    <td>${persona.nazionalita}</td>
                     <td>${persona.cognome}</td>
+                    <td>${persona.nome}</td>
+                    <td>${persona.sesso}</td>
+                    <td>${persona.telefono}</td>
+                    <td>${persona.citta}</td>
+                    <td>${persona.provincia}</td>
+                    <td>${persona.cap}</td>
+                    <td>${persona.coordinate}</td>
+                    <td>${persona.zona}</td>
+                    <td>${persona.asl}</td>
+                    <td>${persona.municipi_distretti_roma}</td>
                     <td>${persona.email}</td>
+                    <td>${persona.patente}</td>
+                    <td>${persona.data_colloquio_contatto}</td>
+                    <td>${persona.offerta_assistenza}</td>
+                    <td>${persona.tipo_collaborazione}</td>
+                    <td>${persona.commenti}</td>
                     <td>
                         <button class="modifica-persona pure-button" data-val="${persona.id}">Modifica</button>
                         <button class="elimina-persona pure-button" data-val="${persona.id}">Elimina</button>
@@ -238,6 +295,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
   }
 
   function aggiornaTabella() {
+    let caricaAltriBtn = document.getElementById("carica-altri");
+    if (caricaAltriBtn.disabled) {
+      return;
+    }
     let tabella = document.querySelector("#tabella-record");
     if (tabella) {
       tabellaContainer.removeChild(tabella);

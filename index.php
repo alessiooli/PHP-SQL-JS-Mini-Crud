@@ -14,7 +14,6 @@
     <h1>The Smallest Crud in the World</h1>
     <h2>Made in Javascript, PHP, SQL</h2>
     <button id="nuova-riga" class="pure-button pure-button-primary">Inserisci Persona</button>
-    <div id="tabella-container"></div>
     <div id="div-inserisci-persona" style="display: none;">
         <h2>Inserisci una nuova persona nel Database</h2>
         <form id="form-inserisci-persona" class="pure-form"> <!-- Poiché gestisco la richiesta tramite JS non servono form action e method  -->
@@ -27,6 +26,8 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+    <div id="tabella-container"></div>
+    <button id="carica-altri" class="pure-button pure-button-primary">Carica altri risultati</button>
     <div id="div-modifica-persona" style="display: none;">
         <h2>Modifica una persona nel Database</h2>
         <form id="form-modifica-persona" class="pure-form">
