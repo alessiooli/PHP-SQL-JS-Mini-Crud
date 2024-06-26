@@ -4,7 +4,7 @@ The smallest interactive crud in the world, made in PHP, SQL, JS.
 
 ## Why?
 
-This is a project I'm working on, a small crud to serve as a database. Wasn't planned to go public, but I thought it could help somebody who's learning web development. If you need help, reach me out on my website.
+This is a project I'm working on, a small crud to interact with a SQL database. Wasn't planned to go public, but I thought it could help somebody who's learning web development. If you need help, reach me out on my website.
 
 ## Tech Stack
 
@@ -61,14 +61,3 @@ Unfortunately some variables names are in italian, given that it started just fo
         - https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html
         - https://packagist.org/packages/teamtnt/tntsearch
 
-## Appunti
-
-- capire come implementare la ricerca sui campi principali, che potrebbero essere:
-  - codice
-  - nazionalità: italiana o non
-  - città
-  - zona
-  - asl
-  - municipi/distretti
-
-Ha senso almeno all'inizio partire con una ricerca con un menù dropdown in cui selezionare direttamente il campo da cercare, che poi invierò come variabile al database.
